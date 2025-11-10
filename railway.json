@@ -1,0 +1,15 @@
+{
+  "build": {
+    "nixpacksPlan": {
+      "phases": {
+        "install": { "cmds": ["npm i --no-audit --no-fund"] },
+        "build": { "cmds": ["npm run build"] }
+      }
+    }
+  },
+  "deploy": {
+    "startCommand": "npm start",
+    "healthcheckPath": "/",
+    "healthcheckTimeout": 100
+  }
+}

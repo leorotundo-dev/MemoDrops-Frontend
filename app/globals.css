@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apple-like subtle glass with high contrast text */
+:root {
+  --bg-grad: radial-gradient(1200px 600px at 20% -10%, rgba(255,255,255,0.7), rgba(255,255,255,0.4)),
+              radial-gradient(1000px 500px at 120% 10%, rgba(199,227,255,0.35), rgba(255,255,255,0.3)),
+              linear-gradient(180deg, #f6f8fb 0%, #f3f6fb 60%, #eef2f8 100%);
+}
+html, body {
+  height: 100%;
+}
+body {
+  background: var(--bg-grad);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01" on, "cv01" on;
+}
+.glass {
+  @apply bg-white/60 backdrop-blur-xs border border-white/60 shadow-soft;
+}
+.btn {
+  @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition-transform;
+}
+.btn-primary {
+  @apply btn bg-ink-900 text-white hover:scale-[1.01] active:scale-[0.99];
+}
+.btn-ghost {
+  @apply btn bg-white/70 hover:bg-white text-ink-800;
+}
+.input {
+  @apply w-full rounded-xl border border-ink-200 bg-white/70 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ink-900/20;
+}
+.card {
+  @apply glass rounded-xl2 p-4;
+}
+.kicker {
+  @apply uppercase tracking-wider text-[11px] text-ink-500;
+}
+.title {
+  @apply text-3xl md:text-4xl font-semibold text-ink-900;
+}
+.subtitle {
+  @apply text-ink-600;
+}
